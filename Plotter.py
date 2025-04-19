@@ -43,8 +43,8 @@ if input("Save Graph? (y/n) : ").lower() == "y":
     file = input("Name: ")
 
     # Save node labels to a file
+    nx.write_edgelist(G, f"{file}.edgelist")
     with open(f"{file}.labels", "w") as f:
-        nx.write_edgelist(G, f"{file}.edgelist")
         for label in labels:
             x, y = label.get_position()
             label = label.get_text()
